@@ -38,6 +38,7 @@ but.forEach((button) => {
             result= operate(parseFloat(inp1), parseFloat(inp2), operation);
             res.textContent=result
             inp1=result.toString()
+            inp2=""
         }
         operation=n
     }
