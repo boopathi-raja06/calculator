@@ -21,18 +21,19 @@ but.forEach((button) => {
     let n = eve.target.textContent;
     //res.textContent=eve.target.textContent
 
-    if(!isNaN(n)||n=='.'){
+    if(!isNaN(n) || n === "."){
         if(operation){
-            res.textContent=''
+            
             inp2+=n;
             res.textContent=inp2
+
         }
         else{
             inp1+=n
             res.textContent=inp1
         }
     }
-    else if(num.includes(n)){
+    else if(op.includes(n)){
         if(inp1&&inp2){
             result= operate(parseFloat(inp1), parseFloat(inp2), operation);
             res.textContent=result
@@ -49,7 +50,7 @@ but.forEach((button) => {
           operation = "";
         }
     }
-    else if(n==='ac')
+    else if(n.toLowerCase()==='ac')
     {
         inp1 = "";
         inp2 = "";
@@ -64,10 +65,10 @@ function operate(in1, in2, operation) {
     case "+":
       return in1 + in2;
     case "-":
-      return in1 + in2;
+      return in1 - in2;
     case "*":
-      return in1 + in2;
+      return in1 * in2;
     case "/":
-      return in1 + in2;
+      return in1 / in2;
   }
 }
