@@ -56,6 +56,7 @@ but.forEach((button) => {
         inp1 = "";
         inp2 = "";
         operation = "";
+        result=""
         res.textContent = "";
     }
   });
@@ -69,7 +70,9 @@ function operate(in1, in2, operation) {
       return in1 - in2;
     case "*":
       return in1 * in2;
-    case "/":
-      return in1 / in2;
+      case "/":
+        return in2 !== 0 ? in1 / in2 : "Error"; // Prevent division by zero
+      default:
+        return 0;
   }
 }
